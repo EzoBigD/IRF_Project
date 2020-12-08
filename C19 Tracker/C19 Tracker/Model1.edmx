@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CoronaTracker_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agy">
+          <Key>
+            <PropertyRef Name="AgyID" />
+          </Key>
+          <Property Name="AgyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeremFK" Type="int" Nullable="false" />
+          <Property Name="Foglalt" Type="bit" Nullable="false" />
+          <Property Name="JelenlegiBetegFK" Type="int" />
+        </EntityType>
+        <EntityType Name="Allapot">
+          <Key>
+            <PropertyRef Name="AllapotID" />
+          </Key>
+          <Property Name="AllapotID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FDatum" Type="date" Nullable="false" />
+          <Property Name="BetegFK" Type="int" />
+          <Property Name="Sulyossag" Type="int" Nullable="false" />
+          <Property Name="Kohoges" Type="bit" Nullable="false" />
+          <Property Name="NehezLegzes" Type="bit" Nullable="false" />
+          <Property Name="Laz" Type="bit" Nullable="false" />
+          <Property Name="IzVesztes" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Beosztas">
+          <Key>
+            <PropertyRef Name="BeosztasID" />
+          </Key>
+          <Property Name="BeosztasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrvosFK" Type="int" Nullable="false" />
+          <Property Name="Műszak" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Beteg">
+          <Key>
+            <PropertyRef Name="BetegID" />
+          </Key>
+          <Property Name="BetegID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nev" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Szul_Ido" Type="date" Nullable="false" />
+          <Property Name="Szul_Hely" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nem" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Taj_Szam" Type="int" Nullable="false" />
+          <Property Name="Reg_Nap" Type="date" Nullable="false" />
+          <Property Name="OrvosFK" Type="int" />
+          <Property Name="JelenlegiAllapotFK" Type="int" />
+          <Property Name="Gyogyult" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orvos">
+          <Key>
+            <PropertyRef Name="OrvosID" />
+          </Key>
+          <Property Name="OrvosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrvosNev" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pozicio" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Terem">
+          <Key>
+            <PropertyRef Name="TeremID" />
+          </Key>
+          <Property Name="TeremID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeremTipus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kapacitas" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Agy_ToBeteg">
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="0..1" />
+          <End Role="Agy" Type="Self.Agy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beteg">
+              <PropertyRef Name="BetegID" />
+            </Principal>
+            <Dependent Role="Agy">
+              <PropertyRef Name="JelenlegiBetegFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agy_ToTerem">
+          <End Role="Terem" Type="Self.Terem" Multiplicity="1" />
+          <End Role="Agy" Type="Self.Agy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terem">
+              <PropertyRef Name="TeremID" />
+            </Principal>
+            <Dependent Role="Agy">
+              <PropertyRef Name="TeremFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Allapot_ToTable">
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="0..1" />
+          <End Role="Allapot" Type="Self.Allapot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beteg">
+              <PropertyRef Name="BetegID" />
+            </Principal>
+            <Dependent Role="Allapot">
+              <PropertyRef Name="BetegFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beosztas_ToTOrvos">
+          <End Role="Orvos" Type="Self.Orvos" Multiplicity="1" />
+          <End Role="Beosztas" Type="Self.Beosztas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orvos">
+              <PropertyRef Name="OrvosID" />
+            </Principal>
+            <Dependent Role="Beosztas">
+              <PropertyRef Name="OrvosFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beteg_ToAllapot">
+          <End Role="Allapot" Type="Self.Allapot" Multiplicity="0..1" />
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Allapot">
+              <PropertyRef Name="AllapotID" />
+            </Principal>
+            <Dependent Role="Beteg">
+              <PropertyRef Name="JelenlegiAllapotFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beteg_ToOrvos">
+          <End Role="Orvos" Type="Self.Orvos" Multiplicity="0..1" />
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orvos">
+              <PropertyRef Name="OrvosID" />
+            </Principal>
+            <Dependent Role="Beteg">
+              <PropertyRef Name="OrvosFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoronaTracker_DBModelStoreContainer">
+          <EntitySet Name="Agy" EntityType="Self.Agy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Allapot" EntityType="Self.Allapot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Beosztas" EntityType="Self.Beosztas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Beteg" EntityType="Self.Beteg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orvos" EntityType="Self.Orvos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Terem" EntityType="Self.Terem" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Agy_ToBeteg" Association="Self.FK_Agy_ToBeteg">
+            <End Role="Beteg" EntitySet="Beteg" />
+            <End Role="Agy" EntitySet="Agy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agy_ToTerem" Association="Self.FK_Agy_ToTerem">
+            <End Role="Terem" EntitySet="Terem" />
+            <End Role="Agy" EntitySet="Agy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Allapot_ToTable" Association="Self.FK_Allapot_ToTable">
+            <End Role="Beteg" EntitySet="Beteg" />
+            <End Role="Allapot" EntitySet="Allapot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beosztas_ToTOrvos" Association="Self.FK_Beosztas_ToTOrvos">
+            <End Role="Orvos" EntitySet="Orvos" />
+            <End Role="Beosztas" EntitySet="Beosztas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beteg_ToAllapot" Association="Self.FK_Beteg_ToAllapot">
+            <End Role="Allapot" EntitySet="Allapot" />
+            <End Role="Beteg" EntitySet="Beteg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beteg_ToOrvos" Association="Self.FK_Beteg_ToOrvos">
+            <End Role="Orvos" EntitySet="Orvos" />
+            <End Role="Beteg" EntitySet="Beteg" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoronaTracker_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agy">
+          <Key>
+            <PropertyRef Name="AgyID" />
+          </Key>
+          <Property Name="AgyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeremFK" Type="Int32" Nullable="false" />
+          <Property Name="Foglalt" Type="Boolean" Nullable="false" />
+          <Property Name="JelenlegiBetegFK" Type="Int32" />
+          <NavigationProperty Name="Beteg" Relationship="Self.FK_Agy_ToBeteg" FromRole="Agy" ToRole="Beteg" />
+          <NavigationProperty Name="Terem" Relationship="Self.FK_Agy_ToTerem" FromRole="Agy" ToRole="Terem" />
+        </EntityType>
+        <EntityType Name="Allapot">
+          <Key>
+            <PropertyRef Name="AllapotID" />
+          </Key>
+          <Property Name="AllapotID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FDatum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BetegFK" Type="Int32" />
+          <Property Name="Sulyossag" Type="Int32" Nullable="false" />
+          <Property Name="Kohoges" Type="Boolean" Nullable="false" />
+          <Property Name="NehezLegzes" Type="Boolean" Nullable="false" />
+          <Property Name="Laz" Type="Boolean" Nullable="false" />
+          <Property Name="IzVesztes" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Beteg" Relationship="Self.FK_Allapot_ToTable" FromRole="Allapot" ToRole="Beteg" />
+          <NavigationProperty Name="Betegs" Relationship="Self.FK_Beteg_ToAllapot" FromRole="Allapot" ToRole="Beteg" />
+        </EntityType>
+        <EntityType Name="Beoszta">
+          <Key>
+            <PropertyRef Name="BeosztasID" />
+          </Key>
+          <Property Name="BeosztasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrvosFK" Type="Int32" Nullable="false" />
+          <Property Name="Műszak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Orvo" Relationship="Self.FK_Beosztas_ToTOrvos" FromRole="Beosztas" ToRole="Orvos" />
+        </EntityType>
+        <EntityType Name="Beteg">
+          <Key>
+            <PropertyRef Name="BetegID" />
+          </Key>
+          <Property Name="BetegID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Szul_Ido" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Szul_Hely" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nem" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Taj_Szam" Type="Int32" Nullable="false" />
+          <Property Name="Reg_Nap" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OrvosFK" Type="Int32" />
+          <Property Name="JelenlegiAllapotFK" Type="Int32" />
+          <Property Name="Gyogyult" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Agies" Relationship="Self.FK_Agy_ToBeteg" FromRole="Beteg" ToRole="Agy" />
+          <NavigationProperty Name="Allapots" Relationship="Self.FK_Allapot_ToTable" FromRole="Beteg" ToRole="Allapot" />
+          <NavigationProperty Name="Allapot" Relationship="Self.FK_Beteg_ToAllapot" FromRole="Beteg" ToRole="Allapot" />
+          <NavigationProperty Name="Orvo" Relationship="Self.FK_Beteg_ToOrvos" FromRole="Beteg" ToRole="Orvos" />
+        </EntityType>
+        <EntityType Name="Orvo">
+          <Key>
+            <PropertyRef Name="OrvosID" />
+          </Key>
+          <Property Name="OrvosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrvosNev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pozicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Beosztas" Relationship="Self.FK_Beosztas_ToTOrvos" FromRole="Orvos" ToRole="Beosztas" />
+          <NavigationProperty Name="Betegs" Relationship="Self.FK_Beteg_ToOrvos" FromRole="Orvos" ToRole="Beteg" />
+        </EntityType>
+        <EntityType Name="Terem">
+          <Key>
+            <PropertyRef Name="TeremID" />
+          </Key>
+          <Property Name="TeremID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeremTipus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kapacitas" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agies" Relationship="Self.FK_Agy_ToTerem" FromRole="Terem" ToRole="Agy" />
+        </EntityType>
+        <Association Name="FK_Agy_ToBeteg">
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="0..1" />
+          <End Role="Agy" Type="Self.Agy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beteg">
+              <PropertyRef Name="BetegID" />
+            </Principal>
+            <Dependent Role="Agy">
+              <PropertyRef Name="JelenlegiBetegFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agy_ToTerem">
+          <End Role="Terem" Type="Self.Terem" Multiplicity="1" />
+          <End Role="Agy" Type="Self.Agy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terem">
+              <PropertyRef Name="TeremID" />
+            </Principal>
+            <Dependent Role="Agy">
+              <PropertyRef Name="TeremFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Allapot_ToTable">
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="0..1" />
+          <End Role="Allapot" Type="Self.Allapot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beteg">
+              <PropertyRef Name="BetegID" />
+            </Principal>
+            <Dependent Role="Allapot">
+              <PropertyRef Name="BetegFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beteg_ToAllapot">
+          <End Role="Allapot" Type="Self.Allapot" Multiplicity="0..1" />
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Allapot">
+              <PropertyRef Name="AllapotID" />
+            </Principal>
+            <Dependent Role="Beteg">
+              <PropertyRef Name="JelenlegiAllapotFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beosztas_ToTOrvos">
+          <End Role="Orvos" Type="Self.Orvo" Multiplicity="1" />
+          <End Role="Beosztas" Type="Self.Beoszta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orvos">
+              <PropertyRef Name="OrvosID" />
+            </Principal>
+            <Dependent Role="Beosztas">
+              <PropertyRef Name="OrvosFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beteg_ToOrvos">
+          <End Role="Orvos" Type="Self.Orvo" Multiplicity="0..1" />
+          <End Role="Beteg" Type="Self.Beteg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orvos">
+              <PropertyRef Name="OrvosID" />
+            </Principal>
+            <Dependent Role="Beteg">
+              <PropertyRef Name="OrvosFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoronaTracker_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agies" EntityType="Self.Agy" />
+          <EntitySet Name="Allapots" EntityType="Self.Allapot" />
+          <EntitySet Name="Beosztas" EntityType="Self.Beoszta" />
+          <EntitySet Name="Betegs" EntityType="Self.Beteg" />
+          <EntitySet Name="Orvos" EntityType="Self.Orvo" />
+          <EntitySet Name="Terems" EntityType="Self.Terem" />
+          <AssociationSet Name="FK_Agy_ToBeteg" Association="Self.FK_Agy_ToBeteg">
+            <End Role="Beteg" EntitySet="Betegs" />
+            <End Role="Agy" EntitySet="Agies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agy_ToTerem" Association="Self.FK_Agy_ToTerem">
+            <End Role="Terem" EntitySet="Terems" />
+            <End Role="Agy" EntitySet="Agies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Allapot_ToTable" Association="Self.FK_Allapot_ToTable">
+            <End Role="Beteg" EntitySet="Betegs" />
+            <End Role="Allapot" EntitySet="Allapots" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beteg_ToAllapot" Association="Self.FK_Beteg_ToAllapot">
+            <End Role="Allapot" EntitySet="Allapots" />
+            <End Role="Beteg" EntitySet="Betegs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beosztas_ToTOrvos" Association="Self.FK_Beosztas_ToTOrvos">
+            <End Role="Orvos" EntitySet="Orvos" />
+            <End Role="Beosztas" EntitySet="Beosztas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beteg_ToOrvos" Association="Self.FK_Beteg_ToOrvos">
+            <End Role="Orvos" EntitySet="Orvos" />
+            <End Role="Beteg" EntitySet="Betegs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoronaTracker_DBModelStoreContainer" CdmEntityContainer="CoronaTracker_DBEntities">
+          <EntitySetMapping Name="Agies">
+            <EntityTypeMapping TypeName="CoronaTracker_DBModel.Agy">
+              <MappingFragment StoreEntitySet="Agy">
+                <ScalarProperty Name="AgyID" ColumnName="AgyID" />
+                <ScalarProperty Name="TeremFK" ColumnName="TeremFK" />
+                <ScalarProperty Name="Foglalt" ColumnName="Foglalt" />
+                <ScalarProperty Name="JelenlegiBetegFK" ColumnName="JelenlegiBetegFK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Allapots">
+            <EntityTypeMapping TypeName="CoronaTracker_DBModel.Allapot">
+              <MappingFragment StoreEntitySet="Allapot">
+                <ScalarProperty Name="AllapotID" ColumnName="AllapotID" />
+                <ScalarProperty Name="FDatum" ColumnName="FDatum" />
+                <ScalarProperty Name="BetegFK" ColumnName="BetegFK" />
+                <ScalarProperty Name="Sulyossag" ColumnName="Sulyossag" />
+                <ScalarProperty Name="Kohoges" ColumnName="Kohoges" />
+                <ScalarProperty Name="NehezLegzes" ColumnName="NehezLegzes" />
+                <ScalarProperty Name="Laz" ColumnName="Laz" />
+                <ScalarProperty Name="IzVesztes" ColumnName="IzVesztes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Beosztas">
+            <EntityTypeMapping TypeName="CoronaTracker_DBModel.Beoszta">
+              <MappingFragment StoreEntitySet="Beosztas">
+                <ScalarProperty Name="BeosztasID" ColumnName="BeosztasID" />
+                <ScalarProperty Name="OrvosFK" ColumnName="OrvosFK" />
+                <ScalarProperty Name="Műszak" ColumnName="Műszak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Betegs">
+            <EntityTypeMapping TypeName="CoronaTracker_DBModel.Beteg">
+              <MappingFragment StoreEntitySet="Beteg">
+                <ScalarProperty Name="BetegID" ColumnName="BetegID" />
+                <ScalarProperty Name="Nev" ColumnName="Nev" />
+                <ScalarProperty Name="Szul_Ido" ColumnName="Szul_Ido" />
+                <ScalarProperty Name="Szul_Hely" ColumnName="Szul_Hely" />
+                <ScalarProperty Name="Nem" ColumnName="Nem" />
+                <ScalarProperty Name="Taj_Szam" ColumnName="Taj_Szam" />
+                <ScalarProperty Name="Reg_Nap" ColumnName="Reg_Nap" />
+                <ScalarProperty Name="OrvosFK" ColumnName="OrvosFK" />
+                <ScalarProperty Name="JelenlegiAllapotFK" ColumnName="JelenlegiAllapotFK" />
+                <ScalarProperty Name="Gyogyult" ColumnName="Gyogyult" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orvos">
+            <EntityTypeMapping TypeName="CoronaTracker_DBModel.Orvo">
+              <MappingFragment StoreEntitySet="Orvos">
+                <ScalarProperty Name="OrvosID" ColumnName="OrvosID" />
+                <ScalarProperty Name="OrvosNev" ColumnName="OrvosNev" />
+                <ScalarProperty Name="Pozicio" ColumnName="Pozicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terems">
+            <EntityTypeMapping TypeName="CoronaTracker_DBModel.Terem">
+              <MappingFragment StoreEntitySet="Terem">
+                <ScalarProperty Name="TeremID" ColumnName="TeremID" />
+                <ScalarProperty Name="TeremTipus" ColumnName="TeremTipus" />
+                <ScalarProperty Name="Kapacitas" ColumnName="Kapacitas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
