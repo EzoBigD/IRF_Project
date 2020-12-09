@@ -55,6 +55,7 @@
             this.btnAgyakTermek.TabIndex = 0;
             this.btnAgyakTermek.Text = "Ágyak/Termek";
             this.btnAgyakTermek.UseVisualStyleBackColor = true;
+            this.btnAgyakTermek.Click += new System.EventHandler(this.btnAgyakTermek_Click);
             // 
             // btnBetegek
             // 
@@ -67,6 +68,7 @@
             this.btnBetegek.TabIndex = 1;
             this.btnBetegek.Text = "Betegek";
             this.btnBetegek.UseVisualStyleBackColor = true;
+            this.btnBetegek.Click += new System.EventHandler(this.btnBetegek_Click);
             // 
             // btnBeosztas
             // 
@@ -79,6 +81,7 @@
             this.btnBeosztas.TabIndex = 2;
             this.btnBeosztas.Text = "Beosztás";
             this.btnBeosztas.UseVisualStyleBackColor = true;
+            this.btnBeosztas.Click += new System.EventHandler(this.btnBeosztas_Click);
             // 
             // btnAllapot
             // 
@@ -91,6 +94,7 @@
             this.btnAllapot.TabIndex = 3;
             this.btnAllapot.Text = "Betegek Állapota";
             this.btnAllapot.UseVisualStyleBackColor = true;
+            this.btnAllapot.Click += new System.EventHandler(this.btnAllapot_Click);
             // 
             // pictureBox1
             // 
@@ -112,6 +116,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "X";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel1
             // 
@@ -148,6 +153,14 @@
             this.labelTime.Size = new System.Drawing.Size(74, 29);
             this.labelTime.TabIndex = 8;
             this.labelTime.Text = "label2";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Bejelentkezes
             // 
