@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace C19_Tracker
 {
-    public partial class Form1 : Form
+    public partial class Bejelentkezes : Form
     {
-        public Form1()
+        public Bejelentkezes()
         {
             InitializeComponent();
         }
