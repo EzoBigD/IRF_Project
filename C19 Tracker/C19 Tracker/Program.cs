@@ -16,7 +16,8 @@ namespace C19_Tracker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Bejelentkezes());
+            //Application.Run(new Bejelentkezes());
+            Application.Run(new Kezdolap());
         }
     }
 }
