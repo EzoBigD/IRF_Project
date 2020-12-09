@@ -16,5 +16,13 @@ namespace C19_Tracker
         {
             InitializeComponent();
         }
+
+        private void Bejelentkezes_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            BetegekUC Be = new BetegekUC();
+            panel1.Controls.Add(Be);
+        }
     }
 }

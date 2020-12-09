@@ -77,14 +77,38 @@
     <Compile Include="Agy.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AgyakTermekUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgyakTermekUC.Designer.cs">
+      <DependentUpon>AgyakTermekUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Allapot.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllapotUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllapotUC.Designer.cs">
+      <DependentUpon>AllapotUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Beoszta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BeosztasUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BeosztasUC.Designer.cs">
+      <DependentUpon>BeosztasUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Beteg.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BetegekUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BetegekUC.Designer.cs">
+      <DependentUpon>BetegekUC.cs</DependentUpon>
     </Compile>
     <Compile Include="CoronaTracker_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -126,8 +150,20 @@
     <Compile Include="Terem.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgyakTermekUC.resx">
+      <DependentUpon>AgyakTermekUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllapotUC.resx">
+      <DependentUpon>AllapotUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bejelentkezes.resx">
       <DependentUpon>Bejelentkezes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeosztasUC.resx">
+      <DependentUpon>BeosztasUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BetegekUC.resx">
+      <DependentUpon>BetegekUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kezdolap.resx">
       <DependentUpon>Kezdolap.cs</DependentUpon>
@@ -193,6 +229,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Background4.jpg" />
+    <None Include="Resources\Bacground3.jpg" />
+    <None Include="Resources\Background2.jpg" />
+    <None Include="Resources\BackgroundVert.jpg" />
     <None Include="Resources\Background.jpg" />
     <None Include="Resources\logo.png" />
   </ItemGroup>

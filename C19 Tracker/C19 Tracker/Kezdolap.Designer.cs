@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bejelentkezes));
             this.btnAgyakTermek = new System.Windows.Forms.Button();
             this.btnBetegek = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelDay = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
-            this.panel1.BackgroundImage = global::C19_Tracker.Properties.Resources.Background;
+            this.panel1.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
             this.panel1.Location = new System.Drawing.Point(0, 123);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1700, 627);
@@ -126,11 +129,11 @@
             // 
             this.labelDay.AutoSize = true;
             this.labelDay.BackColor = System.Drawing.Color.Transparent;
-            this.labelDay.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDay.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDay.ForeColor = System.Drawing.Color.DarkCyan;
             this.labelDay.Location = new System.Drawing.Point(1434, 21);
             this.labelDay.Name = "labelDay";
-            this.labelDay.Size = new System.Drawing.Size(59, 23);
+            this.labelDay.Size = new System.Drawing.Size(74, 29);
             this.labelDay.TabIndex = 7;
             this.labelDay.Text = "label1";
             // 
@@ -138,11 +141,11 @@
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.BackColor = System.Drawing.Color.Transparent;
-            this.labelTime.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelTime.Location = new System.Drawing.Point(1539, 63);
+            this.labelTime.Location = new System.Drawing.Point(1519, 61);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(59, 23);
+            this.labelTime.Size = new System.Drawing.Size(74, 29);
             this.labelTime.TabIndex = 8;
             this.labelTime.Text = "label2";
             // 
@@ -153,7 +156,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background;
+            this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1700, 750);
             this.Controls.Add(this.labelTime);
@@ -172,6 +175,7 @@
             this.Name = "Bejelentkezes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CoronaTracker";
+            this.Load += new System.EventHandler(this.Bejelentkezes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,6 +193,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelDay;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
