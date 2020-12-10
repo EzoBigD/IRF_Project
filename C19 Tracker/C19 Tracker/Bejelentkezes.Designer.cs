@@ -99,7 +99,7 @@
             this.btnExit.BackColor = System.Drawing.Color.White;
             this.btnExit.BackgroundImage = global::C19_Tracker.Properties.Resources.Background;
             this.btnExit.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnExit.Location = new System.Drawing.Point(482, 179);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(35, 28);
@@ -123,7 +123,7 @@
             this.btnPrompt.BackColor = System.Drawing.Color.White;
             this.btnPrompt.BackgroundImage = global::C19_Tracker.Properties.Resources.Background;
             this.btnPrompt.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrompt.ForeColor = System.Drawing.Color.Red;
+            this.btnPrompt.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnPrompt.Location = new System.Drawing.Point(482, 459);
             this.btnPrompt.Name = "btnPrompt";
             this.btnPrompt.Size = new System.Drawing.Size(35, 28);

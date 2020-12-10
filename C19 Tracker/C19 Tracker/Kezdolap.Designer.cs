@@ -110,9 +110,10 @@
             // 
             this.button5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button5.Location = new System.Drawing.Point(1670, 0);
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button5.Location = new System.Drawing.Point(1662, 0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 27);
+            this.button5.Size = new System.Drawing.Size(38, 36);
             this.button5.TabIndex = 5;
             this.button5.Text = "X";
             this.button5.UseVisualStyleBackColor = true;
