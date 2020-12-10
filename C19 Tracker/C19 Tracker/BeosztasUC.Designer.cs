@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxOrvosnev = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listBoxOrvos = new System.Windows.Forms.ListBox();
+            this.textBoxOrvos = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelNev = new System.Windows.Forms.Label();
             this.labelBeosztas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBoxOrvosnev
+            // listBoxOrvos
             // 
-            this.listBoxOrvosnev.BackColor = System.Drawing.Color.LightGray;
-            this.listBoxOrvosnev.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxOrvosnev.ForeColor = System.Drawing.Color.DarkCyan;
-            this.listBoxOrvosnev.FormattingEnabled = true;
-            this.listBoxOrvosnev.ItemHeight = 22;
-            this.listBoxOrvosnev.Location = new System.Drawing.Point(118, 186);
-            this.listBoxOrvosnev.Name = "listBoxOrvosnev";
-            this.listBoxOrvosnev.Size = new System.Drawing.Size(140, 264);
-            this.listBoxOrvosnev.TabIndex = 0;
+            this.listBoxOrvos.BackColor = System.Drawing.Color.LightGray;
+            this.listBoxOrvos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxOrvos.ForeColor = System.Drawing.Color.DarkCyan;
+            this.listBoxOrvos.FormattingEnabled = true;
+            this.listBoxOrvos.ItemHeight = 22;
+            this.listBoxOrvos.Location = new System.Drawing.Point(118, 186);
+            this.listBoxOrvos.Name = "listBoxOrvos";
+            this.listBoxOrvos.Size = new System.Drawing.Size(140, 264);
+            this.listBoxOrvos.TabIndex = 0;
+            this.listBoxOrvos.SelectedIndexChanged += new System.EventHandler(this.listBoxOrvos_SelectedIndexChanged);
             // 
-            // textBox1
+            // textBoxOrvos
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 29);
-            this.textBox1.TabIndex = 1;
+            this.textBoxOrvos.Location = new System.Drawing.Point(118, 122);
+            this.textBoxOrvos.Name = "textBoxOrvos";
+            this.textBoxOrvos.Size = new System.Drawing.Size(140, 29);
+            this.textBoxOrvos.TabIndex = 1;
+            this.textBoxOrvos.TextChanged += new System.EventHandler(this.textBoxOrvos_TextChanged);
             // 
             // dataGridView1
             // 
@@ -103,13 +105,14 @@
             this.Controls.Add(this.labelBeosztas);
             this.Controls.Add(this.labelNev);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBoxOrvosnev);
+            this.Controls.Add(this.textBoxOrvos);
+            this.Controls.Add(this.listBoxOrvos);
             this.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkCyan;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BeosztasUC";
             this.Size = new System.Drawing.Size(1332, 593);
+            this.Load += new System.EventHandler(this.BeosztasUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,8 +121,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxOrvosnev;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox listBoxOrvos;
+        private System.Windows.Forms.TextBox textBoxOrvos;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelNev;
         private System.Windows.Forms.Label labelBeosztas;
