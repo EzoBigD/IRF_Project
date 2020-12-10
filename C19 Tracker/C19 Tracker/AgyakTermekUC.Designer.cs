@@ -28,25 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnElhelyez = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.labelSzabad = new System.Windows.Forms.Label();
             this.labelFoglalt = new System.Windows.Forms.Label();
+            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
+            this.agyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agyTableAdapter = new C19_Tracker.CoronaTracker_DBDataSetTableAdapters.AgyTableAdapter();
+            this.comboBoxAgy = new System.Windows.Forms.ComboBox();
+            this.comboBoxNev = new System.Windows.Forms.ComboBox();
+            this.labelSzam = new System.Windows.Forms.Label();
+            this.labelBetegID = new System.Windows.Forms.Label();
+            this.labelNev = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.agyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teremFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foglaltDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnElhelyez
             // 
-            this.btnElhelyez.Location = new System.Drawing.Point(594, 66);
+            this.btnElhelyez.Location = new System.Drawing.Point(742, 58);
             this.btnElhelyez.Name = "btnElhelyez";
             this.btnElhelyez.Size = new System.Drawing.Size(118, 34);
             this.btnElhelyez.TabIndex = 0;
             this.btnElhelyez.Text = "Elhelyezés";
             this.btnElhelyez.UseVisualStyleBackColor = true;
+            this.btnElhelyez.Click += new System.EventHandler(this.btnElhelyez_Click);
             // 
             // dataGridView1
             // 
@@ -59,6 +77,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(71, 213);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(462, 348);
@@ -75,6 +94,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(664, 213);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(462, 348);
@@ -82,18 +102,26 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.agyIDDataGridViewTextBoxColumn,
+            this.teremFKDataGridViewTextBoxColumn,
+            this.foglaltDataGridViewCheckBoxColumn,
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.agyBindingSource;
             this.dataGridView3.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView3.Location = new System.Drawing.Point(71, 44);
+            this.dataGridView3.Location = new System.Drawing.Point(211, 35);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(462, 83);
+            this.dataGridView3.Size = new System.Drawing.Size(504, 83);
             this.dataGridView3.TabIndex = 3;
             // 
             // labelSzabad
@@ -118,6 +146,125 @@
             this.labelFoglalt.TabIndex = 5;
             this.labelFoglalt.Text = "Foglalt ágyak:";
             // 
+            // coronaTracker_DBDataSet
+            // 
+            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
+            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // agyBindingSource
+            // 
+            this.agyBindingSource.DataMember = "Agy";
+            this.agyBindingSource.DataSource = this.coronaTracker_DBDataSet;
+            // 
+            // agyTableAdapter
+            // 
+            this.agyTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBoxAgy
+            // 
+            this.comboBoxAgy.FormattingEnabled = true;
+            this.comboBoxAgy.Location = new System.Drawing.Point(59, 62);
+            this.comboBoxAgy.Name = "comboBoxAgy";
+            this.comboBoxAgy.Size = new System.Drawing.Size(121, 30);
+            this.comboBoxAgy.TabIndex = 6;
+            this.comboBoxAgy.SelectedIndexChanged += new System.EventHandler(this.comboBoxAgy_SelectedIndexChanged);
+            // 
+            // comboBoxNev
+            // 
+            this.comboBoxNev.FormattingEnabled = true;
+            this.comboBoxNev.Location = new System.Drawing.Point(966, 72);
+            this.comboBoxNev.Name = "comboBoxNev";
+            this.comboBoxNev.Size = new System.Drawing.Size(121, 30);
+            this.comboBoxNev.TabIndex = 7;
+            this.comboBoxNev.SelectedIndexChanged += new System.EventHandler(this.comboBoxNev_SelectedIndexChanged);
+            // 
+            // labelSzam
+            // 
+            this.labelSzam.AutoSize = true;
+            this.labelSzam.BackColor = System.Drawing.Color.Transparent;
+            this.labelSzam.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSzam.Location = new System.Drawing.Point(59, 12);
+            this.labelSzam.Name = "labelSzam";
+            this.labelSzam.Size = new System.Drawing.Size(121, 29);
+            this.labelSzam.TabIndex = 8;
+            this.labelSzam.Text = "Ágy száma:";
+            // 
+            // labelBetegID
+            // 
+            this.labelBetegID.AutoSize = true;
+            this.labelBetegID.BackColor = System.Drawing.Color.Transparent;
+            this.labelBetegID.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBetegID.Location = new System.Drawing.Point(1131, 24);
+            this.labelBetegID.Name = "labelBetegID";
+            this.labelBetegID.Size = new System.Drawing.Size(173, 29);
+            this.labelBetegID.TabIndex = 9;
+            this.labelBetegID.Text = "Hozzátartozó ID:";
+            // 
+            // labelNev
+            // 
+            this.labelNev.AutoSize = true;
+            this.labelNev.BackColor = System.Drawing.Color.Transparent;
+            this.labelNev.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNev.Location = new System.Drawing.Point(961, 24);
+            this.labelNev.Name = "labelNev";
+            this.labelNev.Size = new System.Drawing.Size(128, 29);
+            this.labelNev.TabIndex = 10;
+            this.labelNev.Text = "Beteg neve:";
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.BackColor = System.Drawing.Color.Transparent;
+            this.labelID.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelID.Location = new System.Drawing.Point(1131, 72);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(0, 29);
+            this.labelID.TabIndex = 11;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
+            this.lblID.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(1131, 73);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(20, 29);
+            this.lblID.TabIndex = 12;
+            this.lblID.Text = "-";
+            // 
+            // agyIDDataGridViewTextBoxColumn
+            // 
+            this.agyIDDataGridViewTextBoxColumn.DataPropertyName = "AgyID";
+            this.agyIDDataGridViewTextBoxColumn.HeaderText = "Ágy száma";
+            this.agyIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.agyIDDataGridViewTextBoxColumn.Name = "agyIDDataGridViewTextBoxColumn";
+            this.agyIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.agyIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teremFKDataGridViewTextBoxColumn
+            // 
+            this.teremFKDataGridViewTextBoxColumn.DataPropertyName = "TeremFK";
+            this.teremFKDataGridViewTextBoxColumn.HeaderText = "Terem száma";
+            this.teremFKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teremFKDataGridViewTextBoxColumn.Name = "teremFKDataGridViewTextBoxColumn";
+            this.teremFKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // foglaltDataGridViewCheckBoxColumn
+            // 
+            this.foglaltDataGridViewCheckBoxColumn.DataPropertyName = "Foglalt";
+            this.foglaltDataGridViewCheckBoxColumn.HeaderText = "Foglalt";
+            this.foglaltDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.foglaltDataGridViewCheckBoxColumn.Name = "foglaltDataGridViewCheckBoxColumn";
+            this.foglaltDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // jelenlegiBetegFKDataGridViewTextBoxColumn
+            // 
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.DataPropertyName = "JelenlegiBetegFK";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.HeaderText = "Beteg ID";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.Name = "jelenlegiBetegFKDataGridViewTextBoxColumn";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.Width = 125;
+            // 
             // AgyakTermekUC
             // 
             this.AllowDrop = true;
@@ -126,6 +273,13 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.labelID);
+            this.Controls.Add(this.labelNev);
+            this.Controls.Add(this.labelBetegID);
+            this.Controls.Add(this.labelSzam);
+            this.Controls.Add(this.comboBoxNev);
+            this.Controls.Add(this.comboBoxAgy);
             this.Controls.Add(this.labelFoglalt);
             this.Controls.Add(this.labelSzabad);
             this.Controls.Add(this.dataGridView3);
@@ -136,10 +290,13 @@
             this.ForeColor = System.Drawing.Color.DarkCyan;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AgyakTermekUC";
-            this.Size = new System.Drawing.Size(1498, 815);
+            this.Size = new System.Drawing.Size(1336, 815);
+            this.Load += new System.EventHandler(this.AgyakTermekUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +310,19 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label labelSzabad;
         private System.Windows.Forms.Label labelFoglalt;
+        private System.Windows.Forms.BindingSource agyBindingSource;
+        private CoronaTracker_DBDataSet coronaTracker_DBDataSet;
+        private CoronaTracker_DBDataSetTableAdapters.AgyTableAdapter agyTableAdapter;
+        private System.Windows.Forms.ComboBox comboBoxAgy;
+        private System.Windows.Forms.ComboBox comboBoxNev;
+        private System.Windows.Forms.Label labelSzam;
+        private System.Windows.Forms.Label labelBetegID;
+        private System.Windows.Forms.Label labelNev;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agyIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teremFKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn foglaltDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jelenlegiBetegFKDataGridViewTextBoxColumn;
     }
 }

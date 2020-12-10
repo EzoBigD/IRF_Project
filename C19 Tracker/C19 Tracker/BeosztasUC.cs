@@ -22,6 +22,7 @@ namespace C19_Tracker
             context.Beosztas.Load();
 
             listBoxOrvos.DisplayMember = "OrvosNev";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void BeosztasUC_Load(object sender, EventArgs e)

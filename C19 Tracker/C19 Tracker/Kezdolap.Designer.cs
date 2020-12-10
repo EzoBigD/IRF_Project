@@ -111,7 +111,7 @@
             this.button5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.DarkCyan;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button5.Location = new System.Drawing.Point(1662, 0);
+            this.button5.Location = new System.Drawing.Point(1700, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(38, 36);
             this.button5.TabIndex = 5;
@@ -128,18 +128,18 @@
             this.panel1.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
             this.panel1.Location = new System.Drawing.Point(0, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1700, 627);
+            this.panel1.Size = new System.Drawing.Size(1738, 627);
             this.panel1.TabIndex = 6;
             // 
             // labelDay
             // 
             this.labelDay.AutoSize = true;
             this.labelDay.BackColor = System.Drawing.Color.Transparent;
-            this.labelDay.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDay.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDay.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelDay.Location = new System.Drawing.Point(1434, 21);
+            this.labelDay.Location = new System.Drawing.Point(1367, 14);
             this.labelDay.Name = "labelDay";
-            this.labelDay.Size = new System.Drawing.Size(74, 29);
+            this.labelDay.Size = new System.Drawing.Size(93, 37);
             this.labelDay.TabIndex = 7;
             this.labelDay.Text = "label1";
             // 
@@ -147,11 +147,11 @@
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.BackColor = System.Drawing.Color.Transparent;
-            this.labelTime.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelTime.Location = new System.Drawing.Point(1519, 61);
+            this.labelTime.Location = new System.Drawing.Point(1452, 54);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(74, 29);
+            this.labelTime.Size = new System.Drawing.Size(93, 37);
             this.labelTime.TabIndex = 8;
             this.labelTime.Text = "label2";
             // 
@@ -172,7 +172,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1700, 750);
+            this.ClientSize = new System.Drawing.Size(1738, 750);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelDay);
             this.Controls.Add(this.panel1);
