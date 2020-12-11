@@ -54,6 +54,7 @@ namespace C19_Tracker
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             context.Betegs.Load();
+
             var ag = from x in context.Agies
                      select x;
             agyBindingSource.DataSource = ag.ToList();
@@ -110,8 +111,12 @@ namespace C19_Tracker
                                             TeremFK = a.TeremFK,
                                             Foglalt = a.Foglalt,
                                             JelenlegiBetegFK = a.JelenlegiBetegFK
-
                                         }).ToList();
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

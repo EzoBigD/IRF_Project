@@ -69,12 +69,13 @@ namespace C19_Tracker
             try
             {
                 context.SaveChanges();
-                dataGridView1.Refresh();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            dataGridView1.Refresh();
         }
     }
 }

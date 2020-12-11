@@ -30,15 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBoxNev = new System.Windows.Forms.TextBox();
-            this.lblNev = new System.Windows.Forms.Label();
-            this.lblAllapot = new System.Windows.Forms.Label();
-            this.listBoxNev = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
-            this.allapotBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.allapotTableAdapter = new C19_Tracker.CoronaTracker_DBDataSetTableAdapters.AllapotTableAdapter();
             this.fDatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.betegFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sulyossagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +37,20 @@
             this.nehezLegzesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lazDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.izVesztesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.allapotBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
+            this.textBoxNev = new System.Windows.Forms.TextBox();
+            this.lblNev = new System.Windows.Forms.Label();
+            this.lblAllapot = new System.Windows.Forms.Label();
+            this.listBoxNev = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.allapotTableAdapter = new C19_Tracker.CoronaTracker_DBDataSetTableAdapters.AllapotTableAdapter();
             this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allapotBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,6 +78,72 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(992, 265);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // fDatumDataGridViewTextBoxColumn
+            // 
+            this.fDatumDataGridViewTextBoxColumn.DataPropertyName = "FDatum";
+            this.fDatumDataGridViewTextBoxColumn.HeaderText = "Feljegyzés dátuma";
+            this.fDatumDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fDatumDataGridViewTextBoxColumn.Name = "fDatumDataGridViewTextBoxColumn";
+            this.fDatumDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // betegFKDataGridViewTextBoxColumn
+            // 
+            this.betegFKDataGridViewTextBoxColumn.DataPropertyName = "BetegFK";
+            this.betegFKDataGridViewTextBoxColumn.HeaderText = "Beteg ID";
+            this.betegFKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.betegFKDataGridViewTextBoxColumn.Name = "betegFKDataGridViewTextBoxColumn";
+            this.betegFKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sulyossagDataGridViewTextBoxColumn
+            // 
+            this.sulyossagDataGridViewTextBoxColumn.DataPropertyName = "Sulyossag";
+            this.sulyossagDataGridViewTextBoxColumn.HeaderText = "Súlyosság";
+            this.sulyossagDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sulyossagDataGridViewTextBoxColumn.Name = "sulyossagDataGridViewTextBoxColumn";
+            this.sulyossagDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // kohogesDataGridViewCheckBoxColumn
+            // 
+            this.kohogesDataGridViewCheckBoxColumn.DataPropertyName = "Kohoges";
+            this.kohogesDataGridViewCheckBoxColumn.HeaderText = "Köhögés";
+            this.kohogesDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.kohogesDataGridViewCheckBoxColumn.Name = "kohogesDataGridViewCheckBoxColumn";
+            this.kohogesDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // nehezLegzesDataGridViewCheckBoxColumn
+            // 
+            this.nehezLegzesDataGridViewCheckBoxColumn.DataPropertyName = "NehezLegzes";
+            this.nehezLegzesDataGridViewCheckBoxColumn.HeaderText = "Nehéz légzés";
+            this.nehezLegzesDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.nehezLegzesDataGridViewCheckBoxColumn.Name = "nehezLegzesDataGridViewCheckBoxColumn";
+            this.nehezLegzesDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // lazDataGridViewCheckBoxColumn
+            // 
+            this.lazDataGridViewCheckBoxColumn.DataPropertyName = "Laz";
+            this.lazDataGridViewCheckBoxColumn.HeaderText = "Láz";
+            this.lazDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.lazDataGridViewCheckBoxColumn.Name = "lazDataGridViewCheckBoxColumn";
+            this.lazDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // izVesztesDataGridViewCheckBoxColumn
+            // 
+            this.izVesztesDataGridViewCheckBoxColumn.DataPropertyName = "IzVesztes";
+            this.izVesztesDataGridViewCheckBoxColumn.HeaderText = "Íz vesztés";
+            this.izVesztesDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.izVesztesDataGridViewCheckBoxColumn.Name = "izVesztesDataGridViewCheckBoxColumn";
+            this.izVesztesDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // allapotBindingSource
+            // 
+            this.allapotBindingSource.DataMember = "Allapot";
+            this.allapotBindingSource.DataSource = this.coronaTracker_DBDataSet;
+            // 
+            // coronaTracker_DBDataSet
+            // 
+            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
+            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBoxNev
             // 
@@ -143,80 +209,15 @@
             this.dataGridView2.GridColor = System.Drawing.Color.LightGray;
             this.dataGridView2.Location = new System.Drawing.Point(269, 57);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(992, 151);
             this.dataGridView2.TabIndex = 6;
             // 
-            // coronaTracker_DBDataSet
-            // 
-            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
-            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // allapotBindingSource
-            // 
-            this.allapotBindingSource.DataMember = "Allapot";
-            this.allapotBindingSource.DataSource = this.coronaTracker_DBDataSet;
-            // 
             // allapotTableAdapter
             // 
             this.allapotTableAdapter.ClearBeforeFill = true;
-            // 
-            // fDatumDataGridViewTextBoxColumn
-            // 
-            this.fDatumDataGridViewTextBoxColumn.DataPropertyName = "FDatum";
-            this.fDatumDataGridViewTextBoxColumn.HeaderText = "Feljegyzés dátuma";
-            this.fDatumDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fDatumDataGridViewTextBoxColumn.Name = "fDatumDataGridViewTextBoxColumn";
-            this.fDatumDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // betegFKDataGridViewTextBoxColumn
-            // 
-            this.betegFKDataGridViewTextBoxColumn.DataPropertyName = "BetegFK";
-            this.betegFKDataGridViewTextBoxColumn.HeaderText = "Beteg ID";
-            this.betegFKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.betegFKDataGridViewTextBoxColumn.Name = "betegFKDataGridViewTextBoxColumn";
-            this.betegFKDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sulyossagDataGridViewTextBoxColumn
-            // 
-            this.sulyossagDataGridViewTextBoxColumn.DataPropertyName = "Sulyossag";
-            this.sulyossagDataGridViewTextBoxColumn.HeaderText = "Súlyosság";
-            this.sulyossagDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sulyossagDataGridViewTextBoxColumn.Name = "sulyossagDataGridViewTextBoxColumn";
-            this.sulyossagDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // kohogesDataGridViewCheckBoxColumn
-            // 
-            this.kohogesDataGridViewCheckBoxColumn.DataPropertyName = "Kohoges";
-            this.kohogesDataGridViewCheckBoxColumn.HeaderText = "Köhögés";
-            this.kohogesDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.kohogesDataGridViewCheckBoxColumn.Name = "kohogesDataGridViewCheckBoxColumn";
-            this.kohogesDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // nehezLegzesDataGridViewCheckBoxColumn
-            // 
-            this.nehezLegzesDataGridViewCheckBoxColumn.DataPropertyName = "NehezLegzes";
-            this.nehezLegzesDataGridViewCheckBoxColumn.HeaderText = "Nehéz légzés";
-            this.nehezLegzesDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.nehezLegzesDataGridViewCheckBoxColumn.Name = "nehezLegzesDataGridViewCheckBoxColumn";
-            this.nehezLegzesDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // lazDataGridViewCheckBoxColumn
-            // 
-            this.lazDataGridViewCheckBoxColumn.DataPropertyName = "Laz";
-            this.lazDataGridViewCheckBoxColumn.HeaderText = "Láz";
-            this.lazDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.lazDataGridViewCheckBoxColumn.Name = "lazDataGridViewCheckBoxColumn";
-            this.lazDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // izVesztesDataGridViewCheckBoxColumn
-            // 
-            this.izVesztesDataGridViewCheckBoxColumn.DataPropertyName = "IzVesztes";
-            this.izVesztesDataGridViewCheckBoxColumn.HeaderText = "Íz vesztés";
-            this.izVesztesDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.izVesztesDataGridViewCheckBoxColumn.Name = "izVesztesDataGridViewCheckBoxColumn";
-            this.izVesztesDataGridViewCheckBoxColumn.Width = 125;
             // 
             // buttonSave
             // 
@@ -251,9 +252,9 @@
             this.Size = new System.Drawing.Size(1332, 593);
             this.Load += new System.EventHandler(this.AllapotUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allapotBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

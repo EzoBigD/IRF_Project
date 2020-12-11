@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
-            this.betegBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.betegTableAdapter = new C19_Tracker.CoronaTracker_DBDataSetTableAdapters.BetegTableAdapter();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnWrite = new System.Windows.Forms.Button();
             this.nevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.szulIdoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.szulHelyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +39,15 @@
             this.orvosFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jelenlegiAllapotFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gyogyultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.betegBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
+            this.betegTableAdapter = new C19_Tracker.CoronaTracker_DBDataSetTableAdapters.BetegTableAdapter();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnWrite = new System.Windows.Forms.Button();
+            this.btnTorles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.betegBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -75,46 +76,8 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1126, 490);
+            this.dataGridView1.Size = new System.Drawing.Size(1151, 490);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // coronaTracker_DBDataSet
-            // 
-            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
-            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // betegBindingSource
-            // 
-            this.betegBindingSource.DataMember = "Beteg";
-            this.betegBindingSource.DataSource = this.coronaTracker_DBDataSet;
-            // 
-            // betegTableAdapter
-            // 
-            this.betegTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(1165, 193);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 42);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Mentés";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnWrite
-            // 
-            this.btnWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWrite.Location = new System.Drawing.Point(1165, 281);
-            this.btnWrite.Name = "btnWrite";
-            this.btnWrite.Size = new System.Drawing.Size(95, 42);
-            this.btnWrite.TabIndex = 2;
-            this.btnWrite.Text = "Kiírás";
-            this.btnWrite.UseVisualStyleBackColor = true;
             // 
             // nevDataGridViewTextBoxColumn
             // 
@@ -178,6 +141,7 @@
             this.jelenlegiAllapotFKDataGridViewTextBoxColumn.HeaderText = "Jelenlegi Állapot";
             this.jelenlegiAllapotFKDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.jelenlegiAllapotFKDataGridViewTextBoxColumn.Name = "jelenlegiAllapotFKDataGridViewTextBoxColumn";
+            this.jelenlegiAllapotFKDataGridViewTextBoxColumn.Width = 125;
             // 
             // gyogyultDataGridViewCheckBoxColumn
             // 
@@ -187,14 +151,73 @@
             this.gyogyultDataGridViewCheckBoxColumn.Name = "gyogyultDataGridViewCheckBoxColumn";
             this.gyogyultDataGridViewCheckBoxColumn.Width = 125;
             // 
+            // betegBindingSource
+            // 
+            this.betegBindingSource.DataMember = "Beteg";
+            this.betegBindingSource.DataSource = this.coronaTracker_DBDataSet;
+            // 
+            // coronaTracker_DBDataSet
+            // 
+            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
+            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // betegTableAdapter
+            // 
+            this.betegTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(1181, 171);
+            this.btnSave.MaximumSize = new System.Drawing.Size(108, 42);
+            this.btnSave.MinimumSize = new System.Drawing.Size(108, 42);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(108, 42);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Mentés";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnWrite
+            // 
+            this.btnWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWrite.Location = new System.Drawing.Point(1181, 235);
+            this.btnWrite.MaximumSize = new System.Drawing.Size(108, 42);
+            this.btnWrite.MinimumSize = new System.Drawing.Size(108, 42);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(108, 42);
+            this.btnWrite.TabIndex = 2;
+            this.btnWrite.Text = "Kiírás";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
+            // btnTorles
+            // 
+            this.btnTorles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTorles.Location = new System.Drawing.Point(1181, 298);
+            this.btnTorles.MaximumSize = new System.Drawing.Size(108, 42);
+            this.btnTorles.MinimumSize = new System.Drawing.Size(108, 42);
+            this.btnTorles.Name = "btnTorles";
+            this.btnTorles.Size = new System.Drawing.Size(108, 42);
+            this.btnTorles.TabIndex = 3;
+            this.btnTorles.Text = "Törlés";
+            this.btnTorles.UseVisualStyleBackColor = true;
+            this.btnTorles.Click += new System.EventHandler(this.btnTorles_Click);
+            // 
             // BetegekUC
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoSize = true;
             this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
+            this.Controls.Add(this.btnTorles);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridView1);
@@ -202,11 +225,11 @@
             this.ForeColor = System.Drawing.Color.DarkCyan;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BetegekUC";
-            this.Size = new System.Drawing.Size(1332, 593);
+            this.Size = new System.Drawing.Size(1409, 593);
             this.Load += new System.EventHandler(this.BetegekUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.betegBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orvosFKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jelenlegiAllapotFKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn gyogyultDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button btnTorles;
     }
 }

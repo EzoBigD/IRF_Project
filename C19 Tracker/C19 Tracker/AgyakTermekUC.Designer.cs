@@ -33,10 +33,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.agyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teremFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foglaltDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
             this.labelSzabad = new System.Windows.Forms.Label();
             this.labelFoglalt = new System.Windows.Forms.Label();
-            this.coronaTracker_DBDataSet = new C19_Tracker.CoronaTracker_DBDataSet();
-            this.agyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.agyTableAdapter = new C19_Tracker.CoronaTracker_DBDataSetTableAdapters.AgyTableAdapter();
             this.comboBoxAgy = new System.Windows.Forms.ComboBox();
             this.comboBoxNev = new System.Windows.Forms.ComboBox();
@@ -45,15 +49,11 @@
             this.labelNev = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.agyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teremFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foglaltDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.jelenlegiBetegFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnElhelyez
@@ -80,7 +80,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(462, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(462, 315);
             this.dataGridView1.TabIndex = 1;
             // 
             // dataGridView2
@@ -97,7 +97,7 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(462, 348);
+            this.dataGridView2.Size = new System.Drawing.Size(462, 315);
             this.dataGridView2.TabIndex = 2;
             // 
             // dataGridView3
@@ -123,6 +123,50 @@
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(504, 83);
             this.dataGridView3.TabIndex = 3;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // agyIDDataGridViewTextBoxColumn
+            // 
+            this.agyIDDataGridViewTextBoxColumn.DataPropertyName = "AgyID";
+            this.agyIDDataGridViewTextBoxColumn.HeaderText = "Ágy száma";
+            this.agyIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.agyIDDataGridViewTextBoxColumn.Name = "agyIDDataGridViewTextBoxColumn";
+            this.agyIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.agyIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teremFKDataGridViewTextBoxColumn
+            // 
+            this.teremFKDataGridViewTextBoxColumn.DataPropertyName = "TeremFK";
+            this.teremFKDataGridViewTextBoxColumn.HeaderText = "Terem száma";
+            this.teremFKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teremFKDataGridViewTextBoxColumn.Name = "teremFKDataGridViewTextBoxColumn";
+            this.teremFKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // foglaltDataGridViewCheckBoxColumn
+            // 
+            this.foglaltDataGridViewCheckBoxColumn.DataPropertyName = "Foglalt";
+            this.foglaltDataGridViewCheckBoxColumn.HeaderText = "Foglalt";
+            this.foglaltDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.foglaltDataGridViewCheckBoxColumn.Name = "foglaltDataGridViewCheckBoxColumn";
+            this.foglaltDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // jelenlegiBetegFKDataGridViewTextBoxColumn
+            // 
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.DataPropertyName = "JelenlegiBetegFK";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.HeaderText = "Beteg ID";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.Name = "jelenlegiBetegFKDataGridViewTextBoxColumn";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // agyBindingSource
+            // 
+            this.agyBindingSource.DataMember = "Agy";
+            this.agyBindingSource.DataSource = this.coronaTracker_DBDataSet;
+            // 
+            // coronaTracker_DBDataSet
+            // 
+            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
+            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelSzabad
             // 
@@ -145,16 +189,6 @@
             this.labelFoglalt.Size = new System.Drawing.Size(148, 29);
             this.labelFoglalt.TabIndex = 5;
             this.labelFoglalt.Text = "Foglalt ágyak:";
-            // 
-            // coronaTracker_DBDataSet
-            // 
-            this.coronaTracker_DBDataSet.DataSetName = "CoronaTracker_DBDataSet";
-            this.coronaTracker_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // agyBindingSource
-            // 
-            this.agyBindingSource.DataMember = "Agy";
-            this.agyBindingSource.DataSource = this.coronaTracker_DBDataSet;
             // 
             // agyTableAdapter
             // 
@@ -232,39 +266,6 @@
             this.lblID.TabIndex = 12;
             this.lblID.Text = "-";
             // 
-            // agyIDDataGridViewTextBoxColumn
-            // 
-            this.agyIDDataGridViewTextBoxColumn.DataPropertyName = "AgyID";
-            this.agyIDDataGridViewTextBoxColumn.HeaderText = "Ágy száma";
-            this.agyIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.agyIDDataGridViewTextBoxColumn.Name = "agyIDDataGridViewTextBoxColumn";
-            this.agyIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.agyIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // teremFKDataGridViewTextBoxColumn
-            // 
-            this.teremFKDataGridViewTextBoxColumn.DataPropertyName = "TeremFK";
-            this.teremFKDataGridViewTextBoxColumn.HeaderText = "Terem száma";
-            this.teremFKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.teremFKDataGridViewTextBoxColumn.Name = "teremFKDataGridViewTextBoxColumn";
-            this.teremFKDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // foglaltDataGridViewCheckBoxColumn
-            // 
-            this.foglaltDataGridViewCheckBoxColumn.DataPropertyName = "Foglalt";
-            this.foglaltDataGridViewCheckBoxColumn.HeaderText = "Foglalt";
-            this.foglaltDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.foglaltDataGridViewCheckBoxColumn.Name = "foglaltDataGridViewCheckBoxColumn";
-            this.foglaltDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // jelenlegiBetegFKDataGridViewTextBoxColumn
-            // 
-            this.jelenlegiBetegFKDataGridViewTextBoxColumn.DataPropertyName = "JelenlegiBetegFK";
-            this.jelenlegiBetegFKDataGridViewTextBoxColumn.HeaderText = "Beteg ID";
-            this.jelenlegiBetegFKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.jelenlegiBetegFKDataGridViewTextBoxColumn.Name = "jelenlegiBetegFKDataGridViewTextBoxColumn";
-            this.jelenlegiBetegFKDataGridViewTextBoxColumn.Width = 125;
-            // 
             // AgyakTermekUC
             // 
             this.AllowDrop = true;
@@ -290,13 +291,13 @@
             this.ForeColor = System.Drawing.Color.DarkCyan;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AgyakTermekUC";
-            this.Size = new System.Drawing.Size(1336, 815);
+            this.Size = new System.Drawing.Size(1336, 600);
             this.Load += new System.EventHandler(this.AgyakTermekUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

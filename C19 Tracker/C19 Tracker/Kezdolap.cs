@@ -21,8 +21,8 @@ namespace C19_Tracker
         {
             timer1.Enabled = true;
             timer2.Enabled = true;
-            BetegekUC Be = new BetegekUC();
-            panel1.Controls.Add(Be);
+            AgyakTermekUC At = new AgyakTermekUC();
+            panel1.Controls.Add(At);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
