@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoronaTracker_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Felhasznalo.cs" />
     <Compile Include="Kezdolap.cs">
       <SubType>Form</SubType>
     </Compile>

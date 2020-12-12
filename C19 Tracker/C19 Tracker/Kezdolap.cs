@@ -21,8 +21,11 @@ namespace C19_Tracker
         {
             timer1.Enabled = true;
             timer2.Enabled = true;
+
             AgyakTermekUC At = new AgyakTermekUC();
             panel1.Controls.Add(At);
+
+            labelFelhaszn.Text = Felhasznalo.felhaszn;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

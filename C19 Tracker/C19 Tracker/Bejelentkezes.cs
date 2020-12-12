@@ -25,8 +25,10 @@ namespace C19_Tracker
         {
             if (Users.Contains(txtUser.Text) && Passwords.Contains(txtPass.Text) && Array.IndexOf(Users, txtUser.Text) == Array.IndexOf(Passwords, txtPass.Text))
             {
+                Felhasznalo.felhaszn = txtUser.Text;
                 Bejelentkezes ke = new Bejelentkezes();
-                ke.ShowDialog();         
+                ke.ShowDialog();
+                this.Hide();
             }
             else
             {

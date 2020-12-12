@@ -26,8 +26,7 @@ namespace C19_Tracker
         {           
             var be = from x in context.Betegs
                      select x;
-            betegBindingSource.DataSource = be.ToList();
-           
+            betegBindingSource.DataSource = be.ToList();           
         }
 
         private void btnTorles_Click(object sender, EventArgs e)

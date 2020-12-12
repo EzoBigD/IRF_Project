@@ -52,9 +52,7 @@ namespace C19_Tracker
                                             Név = b.Nev
                                         }).ToList();
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            context.Betegs.Load();
-
+                         
             var ag = from x in context.Agies
                      select x;
             agyBindingSource.DataSource = ag.ToList();
@@ -71,6 +69,14 @@ namespace C19_Tracker
 
             comboBoxNev.DisplayMember = "Nev";
 
+            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            var ag1 = from x in context.Agies
+                     select x;
+            agyBindingSource1.DataSource = ag1.ToList();
+
+            dataGridView4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void btnElhelyez_Click(object sender, EventArgs e)
@@ -80,6 +86,8 @@ namespace C19_Tracker
                 context.SaveChanges();
                 dataGridView1.Refresh();
                 dataGridView2.Refresh();
+                dataGridView3.Refresh(); 
+                dataGridView4.Refresh();
             }
             catch (Exception ex)
             {

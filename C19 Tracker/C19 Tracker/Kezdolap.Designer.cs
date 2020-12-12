@@ -41,6 +41,8 @@
             this.labelTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.labelFelhaszn = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +139,7 @@
             this.labelDay.BackColor = System.Drawing.Color.Transparent;
             this.labelDay.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDay.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelDay.Location = new System.Drawing.Point(1367, 14);
+            this.labelDay.Location = new System.Drawing.Point(1502, 15);
             this.labelDay.Name = "labelDay";
             this.labelDay.Size = new System.Drawing.Size(93, 37);
             this.labelDay.TabIndex = 7;
@@ -149,7 +151,7 @@
             this.labelTime.BackColor = System.Drawing.Color.Transparent;
             this.labelTime.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelTime.Location = new System.Drawing.Point(1452, 54);
+            this.labelTime.Location = new System.Drawing.Point(1580, 52);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(93, 37);
             this.labelTime.TabIndex = 8;
@@ -163,6 +165,30 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // labelFelhaszn
+            // 
+            this.labelFelhaszn.AutoSize = true;
+            this.labelFelhaszn.BackColor = System.Drawing.Color.Transparent;
+            this.labelFelhaszn.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFelhaszn.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelFelhaszn.Location = new System.Drawing.Point(1296, 38);
+            this.labelFelhaszn.Name = "labelFelhaszn";
+            this.labelFelhaszn.Size = new System.Drawing.Size(26, 37);
+            this.labelFelhaszn.TabIndex = 9;
+            this.labelFelhaszn.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(1247, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 37);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Bejelentkezve:";
+            // 
             // Bejelentkezes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +199,8 @@
             this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1738, 750);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelFelhaszn);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelDay);
             this.Controls.Add(this.panel1);
@@ -209,6 +237,8 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label labelFelhaszn;
+        private System.Windows.Forms.Label label2;
     }
 }
 

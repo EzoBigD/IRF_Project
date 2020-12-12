@@ -49,16 +49,24 @@
             this.labelNev = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.agyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.agyIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teremFKDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foglaltDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnElhelyez
             // 
-            this.btnElhelyez.Location = new System.Drawing.Point(742, 58);
+            this.btnElhelyez.Location = new System.Drawing.Point(689, 492);
             this.btnElhelyez.Name = "btnElhelyez";
             this.btnElhelyez.Size = new System.Drawing.Size(118, 34);
             this.btnElhelyez.TabIndex = 0;
@@ -80,7 +88,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(462, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(462, 179);
             this.dataGridView1.TabIndex = 1;
             // 
             // dataGridView2
@@ -97,7 +105,7 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(462, 315);
+            this.dataGridView2.Size = new System.Drawing.Size(462, 179);
             this.dataGridView2.TabIndex = 2;
             // 
             // dataGridView3
@@ -266,6 +274,68 @@
             this.lblID.TabIndex = 12;
             this.lblID.Text = "-";
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.agyIDDataGridViewTextBoxColumn1,
+            this.teremFKDataGridViewTextBoxColumn1,
+            this.foglaltDataGridViewCheckBoxColumn1,
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1});
+            this.dataGridView4.DataSource = this.agyBindingSource1;
+            this.dataGridView4.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView4.Location = new System.Drawing.Point(71, 454);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.Size = new System.Drawing.Size(546, 102);
+            this.dataGridView4.TabIndex = 13;
+            // 
+            // agyBindingSource1
+            // 
+            this.agyBindingSource1.DataMember = "Agy";
+            this.agyBindingSource1.DataSource = this.coronaTracker_DBDataSet;
+            // 
+            // agyIDDataGridViewTextBoxColumn1
+            // 
+            this.agyIDDataGridViewTextBoxColumn1.DataPropertyName = "AgyID";
+            this.agyIDDataGridViewTextBoxColumn1.HeaderText = "Ágy száma";
+            this.agyIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.agyIDDataGridViewTextBoxColumn1.Name = "agyIDDataGridViewTextBoxColumn1";
+            this.agyIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.agyIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // teremFKDataGridViewTextBoxColumn1
+            // 
+            this.teremFKDataGridViewTextBoxColumn1.DataPropertyName = "TeremFK";
+            this.teremFKDataGridViewTextBoxColumn1.HeaderText = "Terem száma";
+            this.teremFKDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.teremFKDataGridViewTextBoxColumn1.Name = "teremFKDataGridViewTextBoxColumn1";
+            this.teremFKDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // foglaltDataGridViewCheckBoxColumn1
+            // 
+            this.foglaltDataGridViewCheckBoxColumn1.DataPropertyName = "Foglalt";
+            this.foglaltDataGridViewCheckBoxColumn1.HeaderText = "Foglalt";
+            this.foglaltDataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            this.foglaltDataGridViewCheckBoxColumn1.Name = "foglaltDataGridViewCheckBoxColumn1";
+            this.foglaltDataGridViewCheckBoxColumn1.Width = 125;
+            // 
+            // jelenlegiBetegFKDataGridViewTextBoxColumn1
+            // 
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1.DataPropertyName = "JelenlegiBetegFK";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1.HeaderText = "Beteg ID";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1.Name = "jelenlegiBetegFKDataGridViewTextBoxColumn1";
+            this.jelenlegiBetegFKDataGridViewTextBoxColumn1.Width = 125;
+            // 
             // AgyakTermekUC
             // 
             this.AllowDrop = true;
@@ -274,6 +344,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
+            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.labelNev);
@@ -298,6 +369,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coronaTracker_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agyBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +398,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn teremFKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn foglaltDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jelenlegiBetegFKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.BindingSource agyBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agyIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teremFKDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn foglaltDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jelenlegiBetegFKDataGridViewTextBoxColumn1;
     }
 }
