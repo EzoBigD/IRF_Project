@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoronaTracker_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ErkezettKeszlet.cs" />
     <Compile Include="Felhasznalo.cs" />
     <Compile Include="KeszletUC.cs">
       <SubType>UserControl</SubType>

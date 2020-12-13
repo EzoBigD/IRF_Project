@@ -19,7 +19,26 @@ namespace C19_Tracker
 
         private void label1_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void KeszletUC_Load(object sender, EventArgs e)
+        {
+            ErkezettKeszlet ErkezettDgv = new ErkezettKeszlet();
+            ErkezettDgv.Erkezett(dataGridView1);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.DataSource == null)
+            {
+                KeszletUC_Load(sender, e);
+            }
+
+            dataGridView1.Rows.Add(textBoxNevE.Text.ToString(), textBoxMennyisegE.Text.ToString(), textBoxDatumE.Text.ToString());
+
+            dataGridView1.Refresh();
+        
         }
     }
 }
