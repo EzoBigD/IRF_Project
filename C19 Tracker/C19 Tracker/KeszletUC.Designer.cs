@@ -89,7 +89,7 @@
             this.labelNev.AutoSize = true;
             this.labelNev.BackColor = System.Drawing.Color.Transparent;
             this.labelNev.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNev.Location = new System.Drawing.Point(96, 103);
+            this.labelNev.Location = new System.Drawing.Point(103, 103);
             this.labelNev.Name = "labelNev";
             this.labelNev.Size = new System.Drawing.Size(199, 29);
             this.labelNev.TabIndex = 5;
@@ -103,7 +103,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 63);
+            this.label1.Location = new System.Drawing.Point(78, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 29);
             this.label1.TabIndex = 6;
@@ -132,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(797, 22);
+            this.label3.Location = new System.Drawing.Point(788, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 29);
             this.label3.TabIndex = 10;
@@ -146,7 +146,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(726, 63);
+            this.label4.Location = new System.Drawing.Point(738, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(241, 29);
             this.label4.TabIndex = 9;
@@ -160,7 +160,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(768, 103);
+            this.label5.Location = new System.Drawing.Point(768, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(199, 29);
             this.label5.TabIndex = 8;
@@ -196,6 +196,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Mentés";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxNevE
             // 

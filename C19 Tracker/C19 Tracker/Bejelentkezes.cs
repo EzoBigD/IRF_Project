@@ -18,8 +18,8 @@ namespace C19_Tracker
             txtPass.PasswordChar = '*';
         }
 
-        String[] Users = { "User1", "User2", "User3" };
-        String[] Passwords = { "1111", "2222", "3333" };
+        String[] Users = { "User1", "User2", "User3", "Ezo" };
+        String[] Passwords = { "1111", "2222", "3333", "1234" };
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace C19_Tracker
 
         private void btnPrompt_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Felhasználónév és jelszó beírása után kattintson a bejelelntkezés gombra a program eléréséhez!");
+            MessageBox.Show("Felhasználónév és jelszó beírása után kattintson a bejelentkezés gombra a program eléréséhez!");
         }
     }
 }

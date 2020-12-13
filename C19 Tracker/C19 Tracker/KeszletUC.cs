@@ -26,6 +26,9 @@ namespace C19_Tracker
         {
             ErkezettKeszlet ErkezettDgv = new ErkezettKeszlet();
             ErkezettDgv.Erkezett(dataGridView1);
+
+            FelhasznaltKeszlet FelhasznaltDgv = new FelhasznaltKeszlet();
+            FelhasznaltDgv.Felhasznalt(dataGridView2);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -37,8 +40,19 @@ namespace C19_Tracker
 
             dataGridView1.Rows.Add(textBoxNevE.Text.ToString(), textBoxMennyisegE.Text.ToString(), textBoxDatumE.Text.ToString());
 
-            dataGridView1.Refresh();
-        
+            dataGridView1.Refresh();        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.DataSource == null)
+            {
+                KeszletUC_Load(sender, e);
+            }
+
+            dataGridView2.Rows.Add(textBoxNevF.Text.ToString(), textBoxMennyisegF.Text.ToString(), textBoxDatumF.Text.ToString());
+
+            dataGridView2.Refresh();
         }
     }
 }
