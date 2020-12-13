@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BetegekUC));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.szulIdoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,6 +171,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.Location = new System.Drawing.Point(1181, 171);
             this.btnSave.MaximumSize = new System.Drawing.Size(108, 42);
             this.btnSave.MinimumSize = new System.Drawing.Size(108, 42);
@@ -185,6 +187,7 @@
             this.btnWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWrite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWrite.BackgroundImage")));
             this.btnWrite.Location = new System.Drawing.Point(1181, 235);
             this.btnWrite.MaximumSize = new System.Drawing.Size(108, 42);
             this.btnWrite.MinimumSize = new System.Drawing.Size(108, 42);
@@ -200,6 +203,7 @@
             this.btnTorles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTorles.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTorles.BackgroundImage")));
             this.btnTorles.Location = new System.Drawing.Point(1181, 298);
             this.btnTorles.MaximumSize = new System.Drawing.Size(108, 42);
             this.btnTorles.MinimumSize = new System.Drawing.Size(108, 42);

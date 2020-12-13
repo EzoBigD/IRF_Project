@@ -116,6 +116,12 @@
       <DependentUpon>CoronaTracker_DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Felhasznalo.cs" />
+    <Compile Include="KeszletUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KeszletUC.Designer.cs">
+      <DependentUpon>KeszletUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kezdolap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BetegekUC.resx">
       <DependentUpon>BetegekUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeszletUC.resx">
+      <DependentUpon>KeszletUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kezdolap.resx">
       <DependentUpon>Kezdolap.cs</DependentUpon>

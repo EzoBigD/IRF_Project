@@ -70,5 +70,14 @@ namespace C19_Tracker
             panel1.Controls.Clear();
             panel1.Controls.Add(bo);
         }
+
+        private void btnKeszlet_Click(object sender, EventArgs e)
+        {
+            {
+                KeszletUC ke = new KeszletUC();
+                panel1.Controls.Clear();
+                panel1.Controls.Add(ke);
+            }
+        }
     }
 }

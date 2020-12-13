@@ -43,6 +43,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.labelFelhaszn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnKeszlet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.btnAgyakTermek.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgyakTermek.BackgroundImage")));
             this.btnAgyakTermek.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgyakTermek.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnAgyakTermek.Location = new System.Drawing.Point(492, 0);
+            this.btnAgyakTermek.Location = new System.Drawing.Point(283, 0);
             this.btnAgyakTermek.Name = "btnAgyakTermek";
             this.btnAgyakTermek.Size = new System.Drawing.Size(191, 123);
             this.btnAgyakTermek.TabIndex = 0;
@@ -64,7 +65,7 @@
             this.btnBetegek.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBetegek.BackgroundImage")));
             this.btnBetegek.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBetegek.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnBetegek.Location = new System.Drawing.Point(677, 0);
+            this.btnBetegek.Location = new System.Drawing.Point(474, 0);
             this.btnBetegek.Name = "btnBetegek";
             this.btnBetegek.Size = new System.Drawing.Size(191, 123);
             this.btnBetegek.TabIndex = 1;
@@ -77,7 +78,7 @@
             this.btnBeosztas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBeosztas.BackgroundImage")));
             this.btnBeosztas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBeosztas.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnBeosztas.Location = new System.Drawing.Point(864, 0);
+            this.btnBeosztas.Location = new System.Drawing.Point(665, 0);
             this.btnBeosztas.Name = "btnBeosztas";
             this.btnBeosztas.Size = new System.Drawing.Size(191, 123);
             this.btnBeosztas.TabIndex = 2;
@@ -90,7 +91,7 @@
             this.btnAllapot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAllapot.BackgroundImage")));
             this.btnAllapot.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllapot.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnAllapot.Location = new System.Drawing.Point(1050, 0);
+            this.btnAllapot.Location = new System.Drawing.Point(856, 0);
             this.btnAllapot.Name = "btnAllapot";
             this.btnAllapot.Size = new System.Drawing.Size(191, 123);
             this.btnAllapot.TabIndex = 3;
@@ -103,8 +104,8 @@
             this.pictureBox1.Image = global::C19_Tracker.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(492, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(283, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -189,6 +190,19 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Bejelentkezve:";
             // 
+            // btnKeszlet
+            // 
+            this.btnKeszlet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKeszlet.BackgroundImage")));
+            this.btnKeszlet.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeszlet.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnKeszlet.Location = new System.Drawing.Point(1047, 0);
+            this.btnKeszlet.Name = "btnKeszlet";
+            this.btnKeszlet.Size = new System.Drawing.Size(191, 123);
+            this.btnKeszlet.TabIndex = 11;
+            this.btnKeszlet.Text = "Készlet";
+            this.btnKeszlet.UseVisualStyleBackColor = true;
+            this.btnKeszlet.Click += new System.EventHandler(this.btnKeszlet_Click);
+            // 
             // Bejelentkezes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,6 +213,7 @@
             this.BackgroundImage = global::C19_Tracker.Properties.Resources.Background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1738, 750);
+            this.Controls.Add(this.btnKeszlet);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelFelhaszn);
             this.Controls.Add(this.labelTime);
@@ -239,6 +254,7 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label labelFelhaszn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnKeszlet;
     }
 }
 

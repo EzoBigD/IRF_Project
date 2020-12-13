@@ -50,11 +50,11 @@
             this.labelID = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.agyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.agyIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teremFKDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.foglaltDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.jelenlegiBetegFKDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -66,9 +66,10 @@
             // 
             // btnElhelyez
             // 
-            this.btnElhelyez.Location = new System.Drawing.Point(689, 492);
+            this.btnElhelyez.BackgroundImage = global::C19_Tracker.Properties.Resources.Background;
+            this.btnElhelyez.Location = new System.Drawing.Point(664, 482);
             this.btnElhelyez.Name = "btnElhelyez";
-            this.btnElhelyez.Size = new System.Drawing.Size(118, 34);
+            this.btnElhelyez.Size = new System.Drawing.Size(118, 46);
             this.btnElhelyez.TabIndex = 0;
             this.btnElhelyez.Text = "Elhelyezés";
             this.btnElhelyez.UseVisualStyleBackColor = true;
@@ -298,11 +299,6 @@
             this.dataGridView4.Size = new System.Drawing.Size(546, 102);
             this.dataGridView4.TabIndex = 13;
             // 
-            // agyBindingSource1
-            // 
-            this.agyBindingSource1.DataMember = "Agy";
-            this.agyBindingSource1.DataSource = this.coronaTracker_DBDataSet;
-            // 
             // agyIDDataGridViewTextBoxColumn1
             // 
             this.agyIDDataGridViewTextBoxColumn1.DataPropertyName = "AgyID";
@@ -335,6 +331,11 @@
             this.jelenlegiBetegFKDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.jelenlegiBetegFKDataGridViewTextBoxColumn1.Name = "jelenlegiBetegFKDataGridViewTextBoxColumn1";
             this.jelenlegiBetegFKDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // agyBindingSource1
+            // 
+            this.agyBindingSource1.DataMember = "Agy";
+            this.agyBindingSource1.DataSource = this.coronaTracker_DBDataSet;
             // 
             // AgyakTermekUC
             // 

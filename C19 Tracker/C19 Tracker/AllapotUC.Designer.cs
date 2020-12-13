@@ -221,6 +221,7 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.Image = global::C19_Tracker.Properties.Resources.Background;
             this.buttonSave.Location = new System.Drawing.Point(1176, 545);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(85, 35);
