@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4c641cca79c64037b60f7cec32670f95" Name="Diagram1">
+      <Diagram DiagramId="4c641cca79c64037b60f7cec32670f95" Name="Diagram1" ZoomLevel="80">
         <EntityTypeShape EntityType="CoronaTracker_DBModel.Agy" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoronaTracker_DBModel.Allapot" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoronaTracker_DBModel.Allapot" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CoronaTracker_DBModel.Beoszta" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CoronaTracker_DBModel.Beteg" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CoronaTracker_DBModel.Orvo" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoronaTracker_DBModel.Terem" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoronaTracker_DBModel.Terem" Width="1.5" PointX="11" PointY="4.5" IsExpanded="true" />
         <AssociationConnector Association="CoronaTracker_DBModel.FK_Agy_ToBeteg" ManuallyRouted="false" />
         <AssociationConnector Association="CoronaTracker_DBModel.FK_Agy_ToTerem" ManuallyRouted="false" />
         <AssociationConnector Association="CoronaTracker_DBModel.FK_Allapot_ToTable" ManuallyRouted="false" />

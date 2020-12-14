@@ -72,12 +72,10 @@ namespace C19_Tracker
         }
 
         private void btnKeszlet_Click(object sender, EventArgs e)
-        {
-            {
-                KeszletUC ke = new KeszletUC();
-                panel1.Controls.Clear();
-                panel1.Controls.Add(ke);
-            }
+        {          
+            KeszletUC ke = new KeszletUC();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(ke);
         }
     }
 }
